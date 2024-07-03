@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beccaria S.R.L.</title>
+    
+    <meta property="og:title" content="Beccaria S.r.l."/>
+    <meta property="og:description" content="Specialized in stainless steel turning"/>
+    <meta property="og:type" content="website" />
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preload" as="image" href="images/1.webp">
+    <link rel="preload" as="image" href="images/2.webp">
+    <link rel="preload" as="image" href="images/2.png">
+    <link rel="preload" as="image" href="images/3-1.webp">
+    <link rel="preload" as="image" href="images/3-2.webp">
+    <link rel="preload" as="image" href="images/3-3.webp">
+    <link rel="preload" as="image" href="images/4.webp">
+    <link rel="preload" as="image" href="images/4-2.webp">
+    <link rel="preload" as="image" href="images/5.webp">
+    <link rel="preload" as="image" href="images/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#home" class="trapez-button">home</a>
+        <a href="#azienda" class="trapez-button">azienda</a>
+        <a href="#cosa-facciamo" class="trapez-button">cosa facciamo</a>
+        <a href="#qualita" class="trapez-button">qualità</a>
+        <a href="#contatti" class="trapez-button">contatti</a>
+    </nav>
+
+    <section id="home" class="image-wrapper">
+        <div class="image-container">
+            <img src="images/1.webp" alt="Image 1">
+        </div>
+        <div class="logo-overlay">
+            <img src="images/logo.png" alt="Logo">
+        </div>
+    </section>
+
+    <section id="azienda" class="image-wrapper">
+        <img src="images/2.webp" alt="Image 2">
+        <div class="image-overlay-section2">
+            <img src="images/2.png" alt="Image 2">
+        </div>
+        <div class="text-overlay">
+            <p>Siamo nati nel 1976, crescendo stabilmente come conseguenza naturale della riconosciuta affidabilità, che ci ha qualificato sul mercato globale come interlocutori privilegiati di importanti multinazionali in diversi ambiti industriali (automotive, laboratori di ricerca, alimentare, elettrodomestico, vuoto).</p>
+            <p>L’area produttiva occupa una superficie di 6.500 mq coperti su 15.000 mq totali.</p>
+            <p>Utilizziamo le più avanzate tecnologie che ci permettono di identificare, definire e risolvere nuove sfide in modo estremamente rapido, sempre superando le aspettative dei Clienti. Investiamo una quota considerevole del fatturato in programmi di ricerca e sviluppo, perseguendo assiduamente l’espansione in nuovi mercati.</p>
+        </div>
+<!--     <div class="page-title">
+            <h1>L' azienda</h1>
+        </div> -->   
+    </section>
+
+    <section id="cosa-facciamo" class="image-wrapper">
+        <div class="image-slide-container">
+            <img src="images/3-1.webp" alt="Image 3" class="image-slide active">
+            <img src="images/3-2.webp" alt="Image 3-2" class="image-slide">
+            <img src="images/3-3.webp" alt="Image 3-3" class="image-slide">
+        </div>
+        <div class="text-overlay" id="cosa-facciamo-text">
+            <p>La Beccaria Srl ha focalizzato gli investimenti, la ricerca, l'assetto della struttura produttiva, la selezione e la formazione del personale nel settore della lavorazione dell'acciaio inossidabile, mostrando un alto grado di competitività nel mercato globale.<br>
+            L'azienda serve differenti settori merceologici con la più alta flessibilità in termini di lotti produttivi e di complessità e dimensioni dei particolari (da diam. 3 a diam. 300).<br>
+            I controlli e la cura riservati a tutte le fasi del processo produttivo, di lavaggio e imballo garantiscono un elevatissimo grado di qualità complessiva.</p>
+        </div>
+        <button class="carousel-button left" onclick="prevSlide()">&#9664;</button>
+        <button class="carousel-button right" onclick="nextSlide()">&#9654;</button>
+    </section>
+    
+    
+    
+
+    <section id="qualita" class="image-wrapper">
+        <img src="images/4.webp" alt="Image 4">
+        <div class="image-overlay-section4">
+            <img src="images/4-2.webp" alt="Image 6">
+        </div>
+        <div class="text-overlay-container">
+            <div class="text-overlay">
+                <p>Beccaria srl è certificata IATF 16949 e 2014/68/EU (PED) e ISO 9001:2015. L'azienda dispone di macchinari che consentono il controllo finale al 100% di quote critiche attraverso l'utilizzo di sistemi di visione e di misura per contatto. Una sala metrologica completa di tutti gli strumenti di misura garantisce una verifica approfondita durante le fasi del processo produttivo.</p>
+            </div>
+            <a href="certificati/Certificati-iso9001-IATF-PED.pdf" target="_blank" class="trapez-button attached-button">Certificati</a>
+        </div>
+    </section>
+
+    <section id="contatti" class="image-wrapper">
+        <img src="images/5.webp" alt="Image 5">
+    </section>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
