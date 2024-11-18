@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beccaria S.R.L.</title>
+    
+    <meta property="og:title" content="Beccaria S.r.l."/>
+    <meta property="og:description" content="Specialized in stainless steel turning"/>
+    <meta property="og:type" content="website" />
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preload" as="image" href="images/1.webp">
+    <link rel="preload" as="image" href="images/2.webp">
+    <link rel="preload" as="image" href="images/2.png">
+    <link rel="preload" as="image" href="images/3-1.webp">
+    <link rel="preload" as="image" href="images/3-2.webp">
+    <link rel="preload" as="image" href="images/3-3.webp">
+    <link rel="preload" as="image" href="images/4.webp">
+    <link rel="preload" as="image" href="images/4-2.webp">
+    <link rel="preload" as="image" href="images/5.webp">
+    <link rel="preload" as="image" href="images/logoContorni4.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="#home" class="trapez-button">home</a>
+        <a href="#azienda" class="trapez-button">company</a>
+        <a href="#cosa-facciamo" class="trapez-button">what we do</a>
+        <a href="#qualita" class="trapez-button">quality</a>
+        <a href="#contatti" class="trapez-button">contacts</a>
+        <a id="lang-switch" href="indexEN.html"> 
+            <img src="images/flag-it.png" alt="Switch to Italian" class="lang-icon">
+        </a>
+    </nav>
+
+    <section id="home" class="image-wrapper">
+        <div class="image-container">
+            <img src="images/1.webp" alt="Image 1">
+        </div>
+        <div class="logo-overlay">
+            <img src="images/logoContorni4.png" alt="Logo">
+        </div>
+    </section>
+
+    <section id="azienda" class="image-wrapper">
+        <img src="images/2.webp" alt="Image 2">
+        <div class="image-overlay-section2">
+            <img src="images/2.png" alt="Image 2">
+        </div>
+        <div class="text-overlay">
+            <p>Since our establishment in 1976, we have been growing steadily as a natural consequence of our widely-recognized reliability, which has qualified us on the global market as privileged interlocutors of important multinationals in various industrial fields (automotive, research laboratories, food, household appliances, vacuum).</p>
+            <p>The production area occupies a covered area of 6,500 m2 out of a total of 15,000 m2.</p>
+            <p>We employ cutting-edge technologies that allow us to identify, define and solve new challenges extremely quickly, always exceeding customer expectations. We invest a considerable part of our turnover in research and development programs, assiduously pursuing expansion into new markets.</p>
+        </div> 
+    </section>
+
+    <section id="cosa-facciamo" class="image-wrapper">
+        <div class="image-slide-container">
+            <img src="images/3-1.webp" alt="Image 3" class="image-slide active">
+            <img src="images/3-2.webp" alt="Image 3-2" class="image-slide">
+            <img src="images/3-3.webp" alt="Image 3-3" class="image-slide">
+        </div>
+        <div class="text-overlay" id="cosa-facciamo-text">
+            <p id="slide-text-1">The company has focused investments, research, the organization of the production structure, the selection and training of personnel on the management of materials difficult to process and where particular accuracy is required, showing a high degree of competitiveness on the global market.
+    
+            <p id="slide-text-2" style="display: none;">Production is organized in three shifts in a continuous cycle. We rely on diversified and latest-generation machinery, in order to offer the highest flexibility in terms of complexity and size of the objects to be produced. Our structure allows us to manage very large production batches and small spot series at the same time, ensuring high reactivity, in line with the fast and continuous evolution of the markets.</p>
+    
+            <p id="slide-text-3" style="display: none;">We consider cost optimization an essential value and we work in close collaboration with our customers, with whom we share our know-how, from the conception of the project to the definition of the final design, contributing to the creation of winning synergies with immediate developments on the market.</p>
+        </div>
+        <button class="carousel-button left" onclick="prevSlide()">&#9664;</button>
+        <button class="carousel-button right" onclick="nextSlide()">&#9654;</button>
+    </section>
+    
+    
+    <section id="qualita" class="image-wrapper">
+        <img src="images/4.webp" alt="Image 4">
+        <div class="image-overlay-section4">
+            <img src="images/4-2.webp" alt="Image 6">
+        </div>
+        <div class="text-overlay-container">
+            <div class="text-overlay">
+                <p>Beccaria srl is certified IATF 16949, 2014/68/EU (PED) and ISO 9001:2015. We rely on highly automated machinery for 100% final check of critical dimensions through the use of vision and contact measurement systems. We pay extreme attention to the aesthetics of the parts supplied, by carrying out 100% visual check on a large percentage of our production.</p>
+            </div>
+            <a href="certificati/Certificati-iso9001-IATF-PED.pdf" target="_blank" class="trapez-button attached-button">Certificates</a>
+        </div>
+    </section>
+
+    <section id="contatti" class="image-wrapper">
+        <img src="images/5.webp" alt="Image 5">
+        <div class="text-overlay">
+            <p>Head Office:</p>
+            <p>Str. Brandizzo 432, 10088 Volpiano, Torino</p>
+            <p>Tel: +39 011 995 1269</p>
+            <p>Email: sales@beccariasrl.it</p>
+            <p>Email: info@beccariasrl.it</p>
+            <p>VAT: 01680420013</p>
+        </div>
+    </section>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>

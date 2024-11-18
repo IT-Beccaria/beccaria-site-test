@@ -1,0 +1,541 @@
+/* Global styles */
+* {
+    box-sizing: border-box; /* Include padding  and border in element's total width and height */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rokkitt:wght@400;600&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll; /* Ensure scrollbar is always visible */
+    background-color: #b8b8b8; /* Match background color with image tone */
+}
+
+/* Navbar styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    z-index: 1000;
+    width: 80%; /* Adjust navbar width */
+}
+
+/* Page title styles */
+.page-title {
+    position: absolute;
+    top: 2vw;
+    left: 2vw;
+    color: white;
+    font-size: 2.5vw;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Drop shadow */
+    font-family: "Roboto Condensed", sans-serif; /* Apply the specific font */
+}
+
+.page-title h1 {
+    margin: 0;
+    padding: 0;
+}
+
+/* Trapezoid button styles */
+.trapez-button {
+    text-decoration: none;
+    color: white;
+    padding: 1.2vw 0 0 0;
+    margin: -1vw 10px;
+    font-family: 'Rokkitt', serif; /* Ensure font name matches the imported Google Fonts link */
+    font-weight: 600; /* Use the correct weight for SemiBold */
+    font-size: 1.1vw; /* Font size */
+    background-color: rgba(10, 10, 10, 0.7);
+    clip-path: polygon(
+        0% 0%,
+        100% 0%,
+        99% 9.98%,
+        96.89% 21.94%,
+        94.77% 33.91%,
+        92.51% 39.4%,
+        86.71% 41.83%,
+        13.29% 41.83%,
+        7.49% 39.4%,
+        5.23% 33.91%,
+        3.11% 21.94%,
+        1% 9.98%,
+        0% 0%
+    );
+    width: 9.5vw;
+    height: 7vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    transition: all 0.1s;
+}
+
+.trapez-button:hover {
+    font-size: 1.2vw; /* Increase font size on hover */
+    background-color: rgba(0, 0, 0, 1); /* Darken background on hover */
+}
+
+#lang-switch {
+    position: absolute;
+    top: 1vw;
+    right: -8vw;
+    width: 2vw; 
+    height: 2vw;
+    z-index: 1000;
+}
+
+#lang-switch img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+
+/* Generic text overlay styles */
+.text-overlay {
+    position: absolute;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7); /* Black background with 70% opacity */
+    padding: 1vw 2vw; /* Padding inside the text box */
+    border-radius: 0.2vw; /* Slightly rounded corners */
+    text-align: left;
+}
+
+/* Image container */
+.image-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Image wrapper */
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    object-fit: cover; /* Maintain aspect ratio */
+    display: block;
+}
+
+
+
+/* First section */
+#home .image-container img {
+    filter: contrast(1.5) brightness(0.6); /* Darker image */
+}
+
+.logo-overlay img {
+    filter: none; /* Do not affect logo overlay */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30vw; /* Adjust the size of the logo */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Second section */
+#azienda img {
+    filter: blur(5px); /* Slight blur */
+    margin-bottom: -1px;
+    mask-image: linear-gradient(to bottom, transparent 0%, black 0.2%, black 99.8%, transparent 100%);
+}
+
+#azienda .image-overlay-section2 {
+    position: absolute;
+    top: 50%;
+    left: 30%; /* To the left */
+    transform: translate(-50%, -50%);
+    width: 30vw;
+    height: auto;
+    border: 0.25vw solid black;
+    overflow: hidden;
+}
+
+#azienda .image-overlay-section2 img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    filter: none;
+}
+
+#azienda .text-overlay {
+    position: absolute;
+    top: 30%;
+    left: 50%; /* Center horizontally */
+    font-size: 1vw;
+    font-family: "Rokkitt";
+    width: 35vw;
+    opacity: 0; /* Initially hidden */
+    animation: slideInLeft 0.5s ease-in-out forwards, fadeIn 0.5s ease-in-out forwards; /* Trigger animations */
+}
+
+#azienda .text-overlay p {
+    margin: 10px;
+    padding: 0;
+}
+
+/* Keyframes for sliding in from the left */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-15%); /* Start from off-screen to the left */
+    }
+    to {
+        transform: translateX(+10%); /* End at the original position */
+    }
+}
+
+/* Keyframes for fading in */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start fully transparent */
+    }
+    to {
+        opacity: 1; /* End fully opaque */
+    }
+}
+
+
+/* Third section */
+
+/* Ensure that images are positioned absolutely for smooth transitions */
+.image-slide-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.image-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; /* Smooth transition */
+}
+
+.image-slide.active {
+    opacity: 1; /* The active image will be fully visible */
+}
+
+
+/* Carousel button styles */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    border: none;
+    color: white;
+    font-size: 2vw;
+    padding: 1vw;
+    cursor: pointer;
+    width: 3vw; /* Square button */
+    height: 3vw; /* Square button */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.carousel-button.left {
+    left: 30vw; /* Adjust for centering */
+}
+
+.carousel-button.right {
+    right: 30vw; /* Adjust for centering */
+}
+
+
+#cosa-facciamo img {
+    filter: contrast(1.5) brightness(0.6);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 0.5%, black 99.5%, transparent 100%);
+}
+
+#cosa-facciamo .text-overlay {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Rokkitt";
+    font-size: 1vw;
+    width: 26vw;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.7); /* Black background with 70% opacity */
+    padding: 1vw 2vw; /* Padding inside the text box */
+    border-radius: 0.2vw; /* Slightly rounded corners */
+}
+
+
+/* Fourth section */
+#qualita img {
+    filter: blur(5px);
+    margin-bottom: -1px;
+    object-fit: cover;
+    mask-image: linear-gradient(to bottom, transparent 0%, black 0.2%, black 99.8%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 0.2%, black 99.8%, transparent 100%);
+}
+
+#qualita .image-overlay-section4 {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(0, -50%);
+    width: 15vw;
+    height: auto;
+    border: 0.3vw solid rgb(0, 0, 0);
+    overflow: hidden;
+}
+
+#qualita .image-overlay-section4 img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: none;
+}
+
+/* Text overlay container to hold text and button */
+#qualita .text-overlay-container {
+    position: absolute;
+    top: 60%;
+    right: 22%;
+    transform: translate(0, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    font-size: 1vw;
+    font-family: "Rokkitt";
+    width: 35vw;
+}
+
+#qualita .text-overlay {
+    background-color: rgba(0, 0, 0, 0.7); /* Black background with 70% opacity */
+    padding: 1vw 2vw; /* Padding inside the text box */
+    border-radius: 0.2vw; /* Slightly rounded corners */
+    text-align: left;
+    margin-bottom: 1vw; /* Space between text and button */
+}
+
+#qualita .text-overlay p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Position the attached trapezoid button */
+#qualita .attached-button {
+    margin-top: 13.8vw; /* Space between text and button */
+}
+
+/* Fifth section */
+#contatti {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+}
+
+#contatti img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire section */
+    display: block;
+}
+
+/* Centered text overlay */
+#contatti .text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the overlay */
+    background-color: rgba(0, 0, 0, 0.7); /* 70% opacity black background */
+    padding: 2vw 3vw; /* Padding around the text */
+    color: white;
+    text-align: center;
+    border-radius: 0.1vw; /* Slight rounding of corners */
+    font-family: 'Rokkitt', serif; /* Ensure consistency with the rest of the site */
+}
+
+#contatti .text-overlay p {
+    margin: 0.5vw 0;
+    font-size: 1vw; /* Paragraph size */
+}
+
+
+
+
+/* Media queries for responsive design */
+
+@media (max-width: 1900px) {
+    #qualita .attached-button {
+        display: none;
+    }
+}
+
+@media (max-width: 1300px) {
+    /* Smaller viewports adjustments */
+
+    .page-title {
+        display: none;
+    }
+
+    #home .logo-overlay img {
+        width: 40vw;
+    }
+
+    #azienda .image-overlay-section2 {
+        position: absolute;
+        top: 33%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 40vw;
+        height: auto;
+        border: 0.25vw solid black;
+        overflow: hidden;
+    }
+
+    #azienda .text-overlay {
+        position: absolute;
+        opacity: 1;
+        top: calc(45vh + 10vw + 1vh);
+        left: 50%;
+        transform: translate(-50%);
+        font-size: 1.5vw;
+        width: 60vw;
+        animation: none;
+    }
+
+    #azienda .text-overlay p {
+        margin: 0.5vw;
+        padding: 0;
+    }
+
+    #cosa-facciamo .text-overlay {
+        position: absolute;
+        top: calc(35vh + 12.5vw + 1vh);
+        left: 50%;
+        font-size: 2vw;
+        width: 50vw;
+    }
+
+    .carousel-button {
+        width: 5vw;
+        height: 5vw;
+        font-size: 3vw;
+    }
+
+    .carousel-button.left {
+        left: 15vw; /* Adjust for centering */
+    }
+    
+    .carousel-button.right {
+        right: 15vw; /* Adjust for centering */
+    }
+
+    #qualita .image-overlay-section4 {
+        left: 50%;
+        top: 40%;
+        transform: translate(-50%, -50%);
+        width: 20vw;
+    }
+
+    #qualita .text-overlay-container {
+        top: calc(50% + 15vw + 2vh);
+        left: 50%;
+        right: auto;
+        transform: translate(-50%, 0);
+        width: 75vw;
+        font-size: 2vw;
+        padding: 4vw;
+    }
+
+    #contatti .text-overlay {
+        font-size: 2.5vw;
+        padding: 3vw 4vw;
+    }
+    
+    #contatti .text-overlay p {
+        font-size: 2vw;
+    }
+    }
+
+@media (max-width: 768px) {
+    /* Hide navbar on small screens */
+    .navbar {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Mobile view adjustments */
+    #home .logo-overlay img {
+        width: 70vw;
+    }
+
+    #azienda .image-overlay-section2 {
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60vw;
+        height: auto;
+        border: 0.25vw solid black;
+        overflow: hidden;
+    }
+    #azienda .text-overlay {
+        top: calc(35vh + 15vw + 1vh);
+        font-size: 3vw;
+        width: 80vw;
+        padding: 2vw;
+    }
+
+    #azienda .text-overlay p {
+        margin: 0;
+        padding: 0;
+    }
+
+    #cosa-facciamo .text-overlay {
+        font-size: 3vw;
+        width: 80vw;
+    }
+
+        /* Hide side buttons on mobile */
+        .carousel-button {
+            display: none;
+        }
+
+    #qualita .image-overlay-section4 {
+        left: 50%;
+        top: 35%;
+        transform: translate(-50%, -50%);
+        width: 40vw;
+    }
+
+    #qualita .text-overlay-container {
+        top: calc(50% + 20vw + 2vh);
+        left: 50%;
+        right: auto;
+        transform: translate(-50%, 0);
+        width: 90vw;
+        font-size: 3vw;
+        padding: 4vw;
+    }
+}
+
