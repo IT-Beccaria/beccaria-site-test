@@ -135,9 +135,16 @@ body {
 
 
 
+
+
+
+
+
+
+
 /* First section */
 #home .image-container img {
-    filter: contrast(1.5) brightness(0.6); /* Darker image */
+    filter: contrast(1.5) brightness(0.5); /* Darker image */
 }
 
 .logo-overlay img {
@@ -146,9 +153,17 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 30vw; /* Adjust the size of the logo */
+    width: 25vw; /* Adjust the size of the logo */
     height: auto; /* Maintain aspect ratio */
 }
+
+
+
+
+
+
+
+
 
 /* Second section */
 #azienda img {
@@ -191,6 +206,8 @@ body {
     padding: 0;
 }
 
+
+
 /* Keyframes for sliding in from the left */
 @keyframes slideInLeft {
     from {
@@ -210,6 +227,98 @@ body {
         opacity: 1; /* End fully opaque */
     }
 }
+
+/* Gallery Button */
+.gallery-button {
+    position: absolute;
+    bottom: 10%; /* Adjust position as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8); /* Black with some transparency */
+    color: white;
+    padding: 1vw 2vw;
+    font-family: 'Rokkitt', serif;
+    font-size: 1.2vw;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.2vw;
+    transition: background-color 0.3s;
+}
+
+.gallery-button:hover {
+    background-color: rgba(0, 0, 0, 1); /* Fully black on hover */
+}
+
+
+/* Modal Lightbox Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9); /* Black background with opacity */
+}
+
+.modal-content {
+    position: relative;
+    margin: auto;
+    width: 80%;
+    max-width: 1000px;
+    max-height: 90vh; /* Ensure it doesn't overflow the viewport height */
+    text-align: center;
+    display: flex;
+    align-items: center; /* Vertically center the image */
+    justify-content: center; /* Horizontally center the image */
+    top: 5%;
+    height: 100%; /* Ensure it fills the modal's height */
+}
+
+
+.modal-slide {
+    display: none; /* Hide slides by default */
+    max-width: 100%; /* Fit within the container width */
+    max-height: 90vh; /* Fit within the viewport height */
+    object-fit: contain; /* Preserve aspect ratio for all images */
+    border-radius: 0.2vw;
+}
+
+.modal-close {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+.modal-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 0.1vw;
+}
+
+.modal-prev {
+    left: -5%;
+}
+
+.modal-next {
+    right: -5%;
+}
+
+
+
+
 
 
 /* Third section */
@@ -284,6 +393,13 @@ body {
 }
 
 
+
+
+
+
+
+
+
 /* Fourth section */
 #qualita img {
     filter: blur(5px);
@@ -344,6 +460,12 @@ body {
     margin-top: 13.8vw; /* Space between text and button */
 }
 
+
+
+
+
+
+
 /* Fifth section */
 #contatti {
     position: relative;
@@ -377,6 +499,13 @@ body {
     margin: 0.5vw 0;
     font-size: 1vw; /* Paragraph size */
 }
+
+
+
+
+
+
+
 
 
 
@@ -477,11 +606,16 @@ body {
     }
 
 @media (max-width: 768px) {
-    /* Hide navbar on small screens */
+    /* Hide navbar and gallery buttons on small screens */
     .navbar {
         display: none;
     }
+
+    .gallery-button {
+        display: none;
+    }
 }
+
 
 @media (max-width: 768px) {
     /* Mobile view adjustments */
@@ -516,10 +650,10 @@ body {
         width: 80vw;
     }
 
-        /* Hide side buttons on mobile */
-        .carousel-button {
-            display: none;
-        }
+    /* Hide side buttons on mobile */
+    .carousel-button {
+        display: none;
+    }
 
     #qualita .image-overlay-section4 {
         left: 50%;
@@ -529,7 +663,7 @@ body {
     }
 
     #qualita .text-overlay-container {
-        top: calc(50% + 20vw + 2vh);
+        top: calc(50% + 30vw + 2vh);
         left: 50%;
         right: auto;
         transform: translate(-50%, 0);

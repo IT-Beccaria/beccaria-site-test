@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preload" as="image" href="images/1.webp">
     <link rel="preload" as="image" href="images/2.webp">
-    <link rel="preload" as="image" href="images/2.png">
     <link rel="preload" as="image" href="images/3-1.webp">
     <link rel="preload" as="image" href="images/3-2.webp">
     <link rel="preload" as="image" href="images/3-3.webp">
@@ -41,21 +40,39 @@
             <img src="images/1.webp" alt="Image 1">
         </div>
         <div class="logo-overlay">
-            <img src="images/logoContorni4.png" alt="Logo">
+            <img src="images/logo test 5.png" alt="Logo">
         </div>
     </section>
 
     <section id="azienda" class="image-wrapper">
         <img src="images/2.webp" alt="Image 2">
         <div class="image-overlay-section2">
-            <img src="images/2.png" alt="Image 2">
+            <img src="images/2.webp" alt="Image 2">
         </div>
         <div class="text-overlay">
             <p>Since our establishment in 1976, we have been growing steadily as a natural consequence of our widely-recognized reliability, which has qualified us on the global market as privileged interlocutors of important multinationals in various industrial fields (automotive, research laboratories, food, household appliances, vacuum).</p>
             <p>The production area occupies a covered area of 6,500 m2 out of a total of 15,000 m2.</p>
             <p>We employ cutting-edge technologies that allow us to identify, define and solve new challenges extremely quickly, always exceeding customer expectations. We invest a considerable part of our turnover in research and development programs, assiduously pursuing expansion into new markets.</p>
-        </div> 
+        </div>
+        <button id="gallery-button" class="gallery-button">Gallery</button>
     </section>
+    
+
+<!-- Modal Lightbox -->
+<div id="gallery-modal" class="modal">
+    <span id="modal-close" class="modal-close">&times;</span>
+    <div class="modal-content">
+        <button id="modal-prev" class="modal-button modal-prev">&#10094;</button>
+        <button id="modal-next" class="modal-button modal-next">&#10095;</button>
+        <img src="images/gallery-1.webp" alt="Gallery Image 1" class="modal-slide">
+        <img src="images/gallery-2.webp" alt="Gallery Image 2" class="modal-slide">
+        <img src="images/gallery-3.webp" alt="Gallery Image 3" class="modal-slide">
+        <img src="images/gallery-4.webp" alt="Gallery Image 4" class="modal-slide">
+        <img src="images/gallery-5.webp" alt="Gallery Image 5" class="modal-slide">
+    </div>
+</div>
+
+
 
     <section id="cosa-facciamo" class="image-wrapper">
         <div class="image-slide-container">

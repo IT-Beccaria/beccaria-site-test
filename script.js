@@ -95,3 +95,50 @@ document.addEventListener("DOMContentLoaded", () => {
         langSwitch.querySelector('img').alt = "Switch to English";
     }
 });
+
+
+// Modal Lightbox Functionality
+document.addEventListener("DOMContentLoaded", () => {
+    const galleryButton = document.getElementById("gallery-button");
+    const modal = document.getElementById("gallery-modal");
+    const modalClose = document.getElementById("modal-close");
+    const modalImages = document.querySelectorAll(".modal-slide");
+    let modalCurrentSlide = 0;
+
+    // Show the modal on button click
+    galleryButton.addEventListener("click", () => {
+        modal.style.display = "block";
+        showModalSlide(modalCurrentSlide);
+    });
+
+    // Close the modal
+    modalClose.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
+
+    // Show a specific slide in the modal
+    function showModalSlide(index) {
+        modalImages.forEach((img, i) => {
+            img.style.display = i === index ? "block" : "none";
+        });
+    }
+
+    // Navigate to the previous slide
+    document.getElementById("modal-prev").addEventListener("click", () => {
+        modalCurrentSlide = (modalCurrentSlide - 1 + modalImages.length) % modalImages.length;
+        showModalSlide(modalCurrentSlide);
+    });
+
+    // Navigate to the next slide
+    document.getElementById("modal-next").addEventListener("click", () => {
+        modalCurrentSlide = (modalCurrentSlide + 1) % modalImages.length;
+        showModalSlide(modalCurrentSlide);
+    });
+
+    // Close the modal when clicking outside of the modal content
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+});
